@@ -11,12 +11,12 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary`}
+      className={`${styles.paddingX} w-full fixed top-0 z-20 bg-primary`}
     >
-      <div className='flex w-full justify-between mx-auto bg-secondary/15 shadow-lg shadow-neutral-600/5 backdrop-blur-xl border-neutral-900 border p-2 sm:p-6 rounded-2xl'>
+      <div className='max-w-7xl mx-auto w-full flex items-center justify-between bg-secondary/15 shadow-lg shadow-neutral-600/5 backdrop-blur-xl border-neutral-900 border p-2 sm:p-6 rounded-2xl'>
         <Link
           to='/'
-          className='flex items-center gap-2'
+          className='flex items-center gap-2 shrink-0'
           onClick={() => {
             setActive('');
             window.scrollTo(0, 0);
@@ -40,7 +40,7 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <div className='sm:hidden flex flex-1 justify-end items-center backdrop-blur-5xl'>
+        <div className='sm:hidden flex flex-1 justify-end items-center'>
           <img
             src={toggle ? close : menu}
             alt='menu'

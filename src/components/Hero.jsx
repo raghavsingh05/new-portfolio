@@ -5,31 +5,35 @@ const Hero = () => {
   const heroSubText = "I Develop Web applications with attractive user interfaces";
   return (
     <section
-      className="relative filter grayscale w-full sm:h-screen h-[90vh] mx-auto bg-cover bg-center"
-      style={{
-        backgroundImage: `url(${backgroundImage})`
-      }} id='home'
+      className="relative w-full sm:h-screen h-[90vh] flex items-center justify-center mx-auto bg-cover bg-center"
+      style={
+        {
+          backgroundImage: `url(${backgroundImage})`
+        }
+      } id='home'
     >
       <div
         className="absolute inset-0"
-        style={{
-          background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%)',
-        }}
+        style={
+          {
+            background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%)',
+          }
+        }
       ></div>
       <div
-        className={`${styles.paddingX} absolute inset-0 top-[100px] max-w-7xl mx-auto my-auto flex flex-row items-center gap-5`}
+        className="relative z-10 flex flex-1 flex-row justify-center items-center w-full max-w-7xl mx-auto gap-5 pt-24 sm:pt-0"
       >
         <div className="sm:flex hidden flex-col justify-center items-center mt-16 ">
           <div className="w-5 h-5 rounded-full bg-[#1a1a1a]" />
           <div className="w-1 sm:h-80 h-40 violet-gradient" />
         </div>
 
-        <div className='mx-auto flex justify-center flex-col items-center'>
-          <h1 className={`${styles.heroHeadText} text-white`}>
+        <div className='flex flex-col items-center justify-center w-full'>
+          <h1 className={`${styles.heroHeadText} text-white text-center`}>
             Hi, I'm <span className="text-[#464646]">Pradeep</span>
           </h1>
           <motion.p
-            className={`${styles.heroSubText} mt-2 text-white-100 text-center w-3/4`}
+            className={`${styles.heroSubText} mt-2 text-white-100 text-center w-full max-w-2xl`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, ease: "easeInOut" }}
@@ -51,12 +55,12 @@ const Hero = () => {
             ))}
           </motion.p>
           <div className='mt-8'>
-          <button onClick={() => {
-                  const phoneNumber = "9580106355";
-                  const message = "Hello! I'd like to connect with you.";
-                  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-                  window.open(whatsappUrl, "_blank");
-                }} className="boton-elegante">Ping Me on WhatsApp!</button>
+            <button onClick={() => {
+                const phoneNumber = "9580106355";
+                const message = "Hello! I'd like to connect with you.";
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, "_blank");
+              }} className="boton-elegante">Ping Me on WhatsApp!</button>
           </div>
         </div>
       </div>
